@@ -1,0 +1,29 @@
+{
+	"name": "Json2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "publish_config.json",
+				"container": "test-container"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"publishBranch": {
+					"type": "string"
+				},
+				"enableGitComment": {
+					"type": "boolean"
+				}
+			}
+		}
+	}
+}
