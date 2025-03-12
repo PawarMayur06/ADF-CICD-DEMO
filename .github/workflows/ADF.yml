@@ -60,15 +60,15 @@ jobs:
         run: npm run build export ${{github.workspace}}/ADF/ /subscriptions/${{ secrets.SUBSCRIPTION_ID}}/resourceGroups/${{ env.rg-name}}/providers/Microsoft.DataFactory/factories/${{ env.adf-name}} "ExportedArmTemplate"
         working-directory: ${{github.workspace}}/Base
         
-      # - name: Commit and push changes
-      #   run: |
-      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
-      #     git config --local user.name "github-actions[bot]"
-      #     find ${{github.workspace}}/ADFroot -name "*.json" -o -name "*.ps1" | while read file; do git add "$file"; done
-      #     git commit -m "Update ARM templates [skip ci]" || echo "No changes to commit"
-      #     git push origin main || echo "No changes to push"
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          find ${{github.workspace}}/ADFroot -name "*.json" -o -name "*.ps1" | while read file; do git add "$file"; done
+          git commit -m "Update ARM templates [skip ci]" || echo "No changes to commit"
+          git push origin main || echo "No changes to push"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       
       - name: Upload Exported ARM Template
         uses: actions/upload-artifact@v4
