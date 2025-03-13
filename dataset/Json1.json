@@ -1,0 +1,100 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "package-lock.json",
+				"container": "test"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"lockfileVersion": {
+					"type": "integer"
+				},
+				"requires": {
+					"type": "boolean"
+				},
+				"packages": {
+					"type": "object",
+					"properties": {
+						"": {
+							"type": "object",
+							"properties": {
+								"dependencies": {
+									"type": "object",
+									"properties": {
+										"@microsoft/azure-data-factory-utilities": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"node_modules/@microsoft/azure-data-factory-utilities": {
+							"type": "object",
+							"properties": {
+								"version": {
+									"type": "string"
+								},
+								"resolved": {
+									"type": "string"
+								},
+								"integrity": {
+									"type": "string"
+								},
+								"license": {
+									"type": "string"
+								},
+								"dependencies": {
+									"type": "object",
+									"properties": {
+										"commander": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"node_modules/commander": {
+							"type": "object",
+							"properties": {
+								"version": {
+									"type": "string"
+								},
+								"resolved": {
+									"type": "string"
+								},
+								"integrity": {
+									"type": "string"
+								},
+								"license": {
+									"type": "string"
+								},
+								"engines": {
+									"type": "object",
+									"properties": {
+										"node": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
